@@ -10,12 +10,10 @@ function modifyHtml() {
     const originalWidth = img.width || img.getAttribute('width');
     const originalHeight = img.height || img.getAttribute('height');
 
-    // Set width to 860 and calculate the proportional height if possible
+    // Set width to 860
     img.setAttribute('width', '860');
-    if (originalWidth && originalHeight) {
-      const newHeight = (860 / originalWidth) * originalHeight;
-      img.setAttribute('height', newHeight);
-    } else {
+
+    if (originalHeight) {
       // Remove height attribute if it exists to maintain aspect ratio
       // automatically
       img.removeAttribute('height');
